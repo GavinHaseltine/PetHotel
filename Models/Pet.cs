@@ -12,7 +12,6 @@ namespace pet_hotel
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public PetColorType color {get;set;}
         public DateTime checkedInAt {get;set;}  
-        public int petOwnerid {get;set;}
         public int id {get;set;}
         public PetBreedType breed {get;set;}
         [ForeignKey("petOwner")]
