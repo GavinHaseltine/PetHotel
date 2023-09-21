@@ -21,17 +21,3 @@ namespace pet_hotel
     }
 }
 
-{
-  "name" : "Fido",
-  "color" : "White",
-  "checkedInAt" : "2020-07-21T03:17:58.917069",
-  "petOwnerid" : 1,
-  "id" : 1,
-  "breed" : "Beagle",
-  "petOwner" : {
-      "id" : 1,
-      "petCount" : 1,
-      "emailAddress" : "asdf@asdf.com",
-      "name" : "blaine"
-  }
-}
