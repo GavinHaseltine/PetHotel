@@ -41,28 +41,28 @@ namespace pet_hotel.Controllers
          [HttpPut("{id}")]
     public Pet Put(int id, Pet Pets) 
     {
-        // Our DB context needs to know the id of the bread to update
+        // Our DB context needs to know the id of the pet to update
         Pets.id = id;
 
-        // Tell the DB context about our updated bread object
+        // Tell the DB context about our updated pet object
         _context.Update(Pets);
 
-        // ...and save the bread object to the database
+        // ...and save the pet object to the database
         _context.SaveChanges();
 
-        // Respond back with the created bread object
+        // Respond back with the created pet object
         return Pets;
     }
     [HttpDelete("{id}")]
     public void Delete(int id) 
     {
-        // Our DB context needs to know the id of the bread to update
-        Pet pets = _context.Pet.Find(id);
+        // Our DB context needs to know the id of the pet to update
+        Pet pets = _context.Pets.Find(id);
 
-        // Tell the DB context about our updated bread object
-        _context.Pet.Remove(pets);
+        // Tell the DB context about our deleted object
+        _context.Pets.Remove(pets);
 
-        // ...and save the bread object to the database
+        // ...and save the pet object to the database
         _context.SaveChanges();
         
     }
