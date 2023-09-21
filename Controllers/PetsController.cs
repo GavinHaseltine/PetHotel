@@ -53,5 +53,18 @@ namespace pet_hotel.Controllers
         // Respond back with the created bread object
         return Pets;
     }
+    [HttpDelete("{id}")]
+    public void Delete(int id) 
+    {
+        // Our DB context needs to know the id of the bread to update
+        Pet pets = _context.Pet.Find(id);
+
+        // Tell the DB context about our updated bread object
+        _context.Pet.Remove(pets);
+
+        // ...and save the bread object to the database
+        _context.SaveChanges();
+        
+    }
     }
 }
