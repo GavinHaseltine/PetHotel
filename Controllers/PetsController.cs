@@ -27,7 +27,7 @@ namespace pet_hotel.Controllers
             return _context.Pets.ToList();
         }
 
-        
+
         [HttpPost]
         public Pet Post(Pet Pets)
         {
@@ -38,28 +38,20 @@ namespace pet_hotel.Controllers
        
         }
 
-        // [HttpGet]
-        // [Route("test")]
-        // public IEnumerable<Pet> GetPets() {
-        //     PetOwner blaine = new PetOwner{
-        //         name = "Blaine"
-        //     };
+         [HttpPut("{id}")]
+    public Pet Put(int id, Pet Pets) 
+    {
+        // Our DB context needs to know the id of the bread to update
+        Pets.id = id;
 
-        //     Pet newPet1 = new Pet {
-        //         name = "Big Dog",
-        //         petOwner = blaine,
-        //         color = PetColorType.Black,
-        //         breed = PetBreedType.Poodle,
-        //     };
+        // Tell the DB context about our updated bread object
+        _context.Update(Pets);
 
-        //     Pet newPet2 = new Pet {
-        //         name = "Little Dog",
-        //         petOwner = blaine,
-        //         color = PetColorType.Golden,
-        //         breed = PetBreedType.Labrador,
-        //     };
+        // ...and save the bread object to the database
+        _context.SaveChanges();
 
-        //     return new List<Pet>{ newPet1, newPet2};
-        // }
+        // Respond back with the created bread object
+        return Pets;
+    }
     }
 }
