@@ -41,9 +41,6 @@ namespace pet_hotel.Migrations
                     b.Property<int>("petOwnerId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("petOwnerid")
-                        .HasColumnType("integer");
-
                     b.HasKey("id");
 
                     b.HasIndex("petOwnerId");
@@ -59,7 +56,6 @@ namespace pet_hotel.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("emailAddress")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("name")
