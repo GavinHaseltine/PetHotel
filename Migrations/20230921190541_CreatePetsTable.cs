@@ -17,7 +17,6 @@ namespace pet_hotel.Migrations
                     name = table.Column<string>(type: "text", nullable: true),
                     color = table.Column<int>(type: "integer", nullable: false),
                     checkedInAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    petOwnerid = table.Column<int>(type: "integer", nullable: false),
                     breed = table.Column<int>(type: "integer", nullable: false),
                     petOwnerId = table.Column<int>(type: "integer", nullable: false)
                 },
