@@ -47,6 +47,7 @@ namespace pet_hotel.Controllers
         _context.PetOwners.Remove(petowners);
 
         // ...and save the pet object to the database
+        // Checking push location
         _context.SaveChanges();
         
     }
